@@ -1,0 +1,4 @@
+node_modules
+yarn.lock
+src/uploads/artist/*
+src/uploads/users/*
