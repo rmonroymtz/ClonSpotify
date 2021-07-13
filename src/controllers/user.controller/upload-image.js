@@ -22,6 +22,7 @@ module.exports = function uploadImage(req, res) {
             res.status(200).send({
               message: "image updated",
               user: userUpdate,
+              image: file_name,
             });
           }
         }
