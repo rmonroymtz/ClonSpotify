@@ -24,6 +24,7 @@ app.use((req, res, next) => {
   );
   res.header("Access-Allow-Control-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.header("Allow", "GET, POST, PUT, DELETE, OPTIONS");
+  next();
 });
 /**
  * routes
