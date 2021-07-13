@@ -4,7 +4,6 @@ const jwt = require("../../services/jwt");
 
 module.exports = function loginUser(req, res) {
   const { email, password, getHash } = req.body;
-  console.log(req.body)
   User.findOne({ email: email?.toLowerCase() }, (err, user) => {
     if (err) {
       res.status(500).send({

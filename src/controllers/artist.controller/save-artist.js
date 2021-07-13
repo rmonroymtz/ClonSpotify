@@ -5,7 +5,6 @@ module.exports = function saveArtist(req, res) {
   const artist = new Artist();
 
   const { name, description, image } = req.body;
-    console.log(req.body)
   artist.name = name;
   artist.description = description;
   artist.image = image;

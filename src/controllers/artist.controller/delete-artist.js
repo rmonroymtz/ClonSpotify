@@ -7,7 +7,6 @@ module.exports = async function deleteArtist(req, res) {
 
   const artistRemoved = await Artist.findByIdAndRemove(artistId).catch(
     (err) => {
-      console.log(err);
       res.status(500).send({
         message: "Error al intentear eliminar el artista",
       });
@@ -18,11 +17,9 @@ module.exports = async function deleteArtist(req, res) {
       message: "El artista no ha sido elimiado",
     });
   } else {
-    console.log(artistRemoved);
     const albumRemoved = await Album.find({ artist: artistRemoved._id })
       .remove()
       .catch((error) => {
-        console.log(error);
         res.status(500).send({
           message: "Hubo un error al intentar eliminar el album",
         });
@@ -36,7 +33,6 @@ module.exports = async function deleteArtist(req, res) {
       const songRemoved = await Song.find({ album: albumRemoved._id })
         .remove()
         .catch((error) => {
-          console.log(error);
           res.status(500).send({
             message: "Error al intentar aliminar las canciones",
           });
